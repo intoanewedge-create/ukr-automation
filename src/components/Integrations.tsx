@@ -34,21 +34,21 @@ export default function Integrations() {
     <section
       id="platforms"
       ref={sectionRef}
-      className="py-24 lg:py-32 relative overflow-hidden bg-white border-t border-[#0046c8]/10"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-white border-t border-[#0046c8]/10"
       aria-label="Supported advertising and social media channels"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16 reveal">
+        <div className="max-w-3xl mb-10 sm:mb-16 reveal">
           <div className="section-badge">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0046c8]" />
             Channel Ready
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
             Built for Where Your Customers Scroll.
           </h2>
-          <p className="mt-5 text-[#42526E] text-base sm:text-lg leading-relaxed">
+          <p className="mt-3 sm:mt-5 text-[#42526E] text-sm sm:text-lg leading-relaxed">
             Every UGC video is formatted with native platform margins, optimized audio dynamics, and attention-grabbing pacing tailored for organic feeds and paid ad auctions.
           </p>
         </div>

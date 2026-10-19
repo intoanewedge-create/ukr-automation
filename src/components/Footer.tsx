@@ -54,22 +54,22 @@ export default function Footer() {
       role="contentinfo"
       className="bg-[#051026] border-t border-[#0046c8]/20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-14">
 
           {/* Brand + contact */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex items-center gap-3.5 mb-5 group inline-flex"
+              className="flex items-center gap-3 mb-5 group inline-flex"
               aria-label="UKR Automation - Home"
             >
-              <div className="w-16 h-16 rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0 border-2 border-[#0046c8] shadow-md group-hover:border-white transition-all duration-200 bg-[#0046c8]">
-                <img src="/Logo.jpeg?v=2" alt="UKR Automation" width={64} height={64} className="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-200" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0 border-2 border-[#0046c8] shadow-md group-hover:border-white transition-all duration-200 bg-[#0046c8]">
+                <img src="/Logo.jpeg?v=2" alt="UKR Automation" width={56} height={56} className="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-200" />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-bold text-lg md:text-xl tracking-tight leading-none group-hover:text-[#93C5FD] transition-colors">
+                <span className="text-white font-bold text-base sm:text-lg md:text-xl tracking-tight leading-none group-hover:text-[#93C5FD] transition-colors">
                   {COMPANY.name}
                 </span>
                 <span className="text-[10px] text-[#60A5FA] font-medium tracking-widest uppercase mt-1">

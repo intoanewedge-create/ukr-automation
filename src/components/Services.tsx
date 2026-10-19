@@ -66,42 +66,42 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-24 lg:py-32 relative overflow-hidden bg-[#F4F8FD] border-t border-slate-200/70"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-[#F4F8FD] border-t border-slate-200/70"
       aria-label="AI UGC Content Formats"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 reveal">
+        <div className="max-w-3xl mb-10 sm:mb-16 reveal">
           <div className="section-badge bg-white shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0046C8]" />
             Core UGC Capabilities
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
             UGC Formats Built for Real Engagement & Conversion.
           </h2>
-          <p className="mt-5 text-[#475569] text-base sm:text-lg leading-relaxed">
+          <p className="mt-3 sm:mt-5 text-[#475569] text-sm sm:text-lg leading-relaxed">
             Every video is structured from the ground up for mobile viewing habits: fast hooks, clear pacing, dynamic visual proof, and clear calls to action.
           </p>
         </div>
 
         {/* Formats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {formats.map((f, i) => (
             <div
               key={f.id}
-              className="p-8 rounded-2xl bg-white border border-slate-200/80 hover:border-[#0046C8]/40 hover:shadow-xl hover:shadow-[#0046C8]/8 transition-all duration-200 reveal flex flex-col justify-between group"
+              className="p-5 sm:p-8 rounded-2xl bg-white border border-slate-200/80 hover:border-[#0046C8]/40 hover:shadow-xl hover:shadow-[#0046C8]/8 transition-all duration-200 reveal flex flex-col justify-between group"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div>
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center justify-between mb-4 sm:mb-5">
                   <span className="px-3 py-1 rounded-full bg-[#E8F2FE] border border-[#0046C8]/20 text-[11px] font-mono font-bold text-[#0046C8] tracking-wide">
                     {f.tag}
                   </span>
                   <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#0046C8] transition-colors" />
                 </div>
 
-                <h3 className="text-[#091E42] font-bold text-xl mb-3 group-hover:text-[#0046C8] transition-colors">
+                <h3 className="text-[#091E42] font-bold text-lg sm:text-xl mb-2 sm:mb-3 group-hover:text-[#0046C8] transition-colors">
                   {f.title}
                 </h3>
 
@@ -110,7 +110,7 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs text-slate-500 font-medium">9:16 Vertical Video</span>
                 <span className="text-[#0046C8] text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   Explore Format →
@@ -121,9 +121,9 @@ export default function Services() {
         </div>
 
         {/* Section Bottom CTA */}
-        <div className="mt-14 p-8 rounded-2xl bg-white border border-[#0046C8]/20 shadow-md shadow-[#0046C8]/5 flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
+        <div className="mt-10 sm:mt-14 p-5 sm:p-8 rounded-2xl bg-white border border-[#0046C8]/20 shadow-md shadow-[#0046C8]/5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 sm:gap-6 reveal">
           <div>
-            <h4 className="text-[#091E42] font-bold text-lg mb-1">
+            <h4 className="text-[#091E42] font-bold text-base sm:text-lg mb-1">
               Have specific creative requirements for your campaign?
             </h4>
             <p className="text-[#475569] text-sm">
@@ -134,7 +134,7 @@ export default function Services() {
             href={CALENDAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-sm py-3 px-6 whitespace-nowrap"
+            className="btn-primary text-sm py-3 px-6 whitespace-nowrap w-full sm:w-auto justify-center text-center shrink-0"
             aria-label="Get Free Consultation - Book consultation"
           >
             Get Free Consultation

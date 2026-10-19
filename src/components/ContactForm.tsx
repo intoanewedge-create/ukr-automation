@@ -113,11 +113,11 @@ export default function ContactForm() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-24 lg:py-36 relative overflow-hidden bg-white border-t border-[#0046c8]/10"
+      className="py-16 sm:py-24 lg:py-36 relative overflow-hidden bg-white border-t border-[#0046c8]/10"
       aria-label="Contact and UGC video inquiry form"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           
           {/* Left info column */}
           <div className="lg:col-span-5 reveal">
@@ -126,19 +126,19 @@ export default function ContactForm() {
               Direct Studio Contact
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight mb-3 sm:mb-4">
               Let&apos;s Create Something <span className="text-[#0046c8]">People Remember.</span>
             </h2>
 
-            <p className="text-[#42526E] text-base leading-relaxed mb-8">
+            <p className="text-[#42526E] text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
               Share your brand details, website link, or campaign timeline. Our creative team will develop custom UGC concepts, opening hooks, and visual treatments for your brand.
             </p>
 
             {/* Direct contact cards */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-3 mb-6 sm:mb-8">
               <a
                 href={COMPANY.phoneHref}
-                className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] border border-[#0046c8]/15 hover:border-[#0046c8] hover:bg-[#EBF3FE] transition-colors group shadow-sm"
+                className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#F8FAFC] border border-[#0046c8]/15 hover:border-[#0046c8] hover:bg-[#EBF3FE] transition-colors group shadow-sm"
                 aria-label={`Call UKR Automation: ${COMPANY.phone}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-[#0046c8]/10 border border-[#0046c8]/20 flex items-center justify-center text-[#0046c8] group-hover:bg-[#0046c8] group-hover:text-white transition-colors flex-shrink-0">
@@ -154,7 +154,7 @@ export default function ContactForm() {
 
               <a
                 href={COMPANY.emailHref}
-                className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] border border-[#0046c8]/15 hover:border-[#0046c8] hover:bg-[#EBF3FE] transition-colors group shadow-sm"
+                className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#F8FAFC] border border-[#0046c8]/15 hover:border-[#0046c8] hover:bg-[#EBF3FE] transition-colors group shadow-sm"
                 aria-label={`Email UKR Automation: ${COMPANY.email}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-[#0046c8]/10 border border-[#0046c8]/20 flex items-center justify-center text-[#0046c8] group-hover:bg-[#0046c8] group-hover:text-white transition-colors flex-shrink-0">
@@ -171,7 +171,7 @@ export default function ContactForm() {
             </div>
 
             {/* Direct Booking CTA */}
-            <div className="p-6 rounded-2xl bg-[#F0F6FE] border border-[#0046c8]/20 shadow-sm">
+            <div className="p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#F0F6FE] border border-[#0046c8]/20 shadow-sm">
               <p className="text-[#091E42] font-bold text-sm mb-1">Prefer an immediate conversation?</p>
               <p className="text-[#42526E] text-xs leading-relaxed mb-4">
                 Schedule a 30-minute creative strategy call directly on Google Calendar.
@@ -194,21 +194,21 @@ export default function ContactForm() {
           {/* Right form column */}
           <div className="lg:col-span-7 reveal">
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-20 bg-[#F8FAFC] border border-[#0046c8]/30 rounded-3xl p-8 shadow-md">
+              <div className="h-full flex flex-col items-center justify-center text-center py-16 sm:py-20 bg-[#F8FAFC] border border-[#0046c8]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-md">
                 <div className="w-16 h-16 rounded-full bg-[#EBF3FE] border border-[#0046c8]/30 flex items-center justify-center mb-5 text-[#0046c8]">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-[#091E42] font-bold text-2xl mb-2">Inquiry Received</h3>
-                <p className="text-[#5E6C84] max-w-md text-sm leading-relaxed">
+                <h3 className="text-[#091E42] font-bold text-xl sm:text-2xl mb-2">Inquiry Received</h3>
+                <p className="text-[#5E6C84] max-w-md text-xs sm:text-sm leading-relaxed">
                   Thank you for sharing your brand details. Our creative team will review your requirements and follow up with tailored UGC concepts within 24 hours.
                 </p>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-[#F8FAFC] border border-[#DFE1E6] rounded-3xl p-8 sm:p-10 space-y-6 shadow-[0_8px_30px_rgba(0,70,200,0.06)]"
+                className="bg-[#F8FAFC] border border-[#DFE1E6] rounded-2xl sm:rounded-3xl p-5 sm:p-10 space-y-5 sm:space-y-6 shadow-[0_8px_30px_rgba(0,70,200,0.06)]"
                 noValidate
                 aria-label="AI UGC inquiry form"
               >

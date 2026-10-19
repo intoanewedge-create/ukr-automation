@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
     <section
       id="why-ugc"
       ref={sectionRef}
-      className="py-20 lg:py-28 relative overflow-hidden bg-[#F0F6FE] border-t border-[#0046c8]/10"
+      className="py-16 sm:py-20 lg:py-28 relative overflow-hidden bg-[#F0F6FE] border-t border-[#0046c8]/10"
       aria-label="Why Brands Choose UGC"
     >
       <div id="why-us" className="sr-only">Why Choose UKR Automation</div>
@@ -68,25 +68,25 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-12 reveal">
+        <div className="max-w-2xl mb-8 sm:mb-12 reveal">
           <div className="section-badge">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0046c8]" />
             The UGC Advantage
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
             Why UGC?
           </h2>
-          <p className="mt-4 text-[#42526E] text-base sm:text-lg leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-[#42526E] text-sm sm:text-lg leading-relaxed">
             Content that connects with modern audiences.
           </p>
         </div>
 
         {/* Pillars Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {pillars.map((pillar, idx) => (
             <div
               key={pillar.title}
-              className="p-6 rounded-2xl bg-white border border-[#0046c8]/10 shadow-[0_4px_20px_rgba(0,70,200,0.04)] hover:border-[#0046c8]/40 hover:shadow-[0_12px_30px_rgba(0,70,200,0.08)] transition-all duration-300 reveal flex flex-col justify-between group"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-[#0046c8]/10 shadow-[0_4px_20px_rgba(0,70,200,0.04)] hover:border-[#0046c8]/40 hover:shadow-[0_12px_30px_rgba(0,70,200,0.08)] transition-all duration-300 reveal flex flex-col justify-between group"
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div>

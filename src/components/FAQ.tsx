@@ -64,27 +64,27 @@ export default function FAQ() {
     <section
       id="faq"
       ref={sectionRef}
-      className="py-24 lg:py-36 bg-[#F8FAFC] relative border-t border-[#0046c8]/10"
+      className="py-16 sm:py-24 lg:py-36 bg-[#F8FAFC] relative border-t border-[#0046c8]/10"
       aria-label="Frequently asked questions about AI UGC"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 reveal">
+        <div className="text-center mb-10 sm:mb-16 reveal">
           <div className="section-badge mx-auto">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0046c8]" />
             Frequently Asked Questions
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
             Clear Answers on <span className="text-[#0046c8]">UGC Production.</span>
           </h2>
-          <p className="mt-4 text-[#42526E] text-base sm:text-lg max-w-xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-[#42526E] text-sm sm:text-lg max-w-xl mx-auto">
             Everything you need to know about our creative process, deliverables, and capabilities.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-3.5 reveal">
+        <div className="space-y-3 sm:space-y-3.5 reveal">
           {faqs.map((faq, i) => (
             <div
               key={i}
@@ -96,20 +96,20 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 cursor-pointer bg-transparent border-none"
+                className="w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left gap-3 sm:gap-4 cursor-pointer bg-transparent border-none"
                 aria-expanded={openIndex === i}
                 aria-controls={`faq-answer-${i}`}
                 id={`faq-question-${i}`}
               >
                 <span
-                  className={`font-bold text-base transition-colors duration-200 tracking-tight ${
+                  className={`font-bold text-sm sm:text-base transition-colors duration-200 tracking-tight ${
                     openIndex === i ? "text-[#0046c8]" : "text-[#091E42]"
                   }`}
                 >
                   {faq.q}
                 </span>
                 <div
-                  className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  className={`flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
                     openIndex === i
                       ? "bg-[#EBF3FE] text-[#0046c8] rotate-45"
                       : "bg-[#F4F5F7] text-[#5E6C84]"
@@ -130,7 +130,7 @@ export default function FAQ() {
                 className="accordion-content"
                 style={{ maxHeight: openIndex === i ? "400px" : "0" }}
               >
-                <p className="px-6 pb-5 text-[#5E6C84] text-sm leading-relaxed">{faq.a}</p>
+                <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-[#5E6C84] text-xs sm:text-sm leading-relaxed">{faq.a}</p>
               </div>
             </div>
           ))}

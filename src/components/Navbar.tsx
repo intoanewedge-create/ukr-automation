@@ -60,26 +60,26 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
       >
         {/* Logo */}
         <Link
           href="/"
           aria-label={`${COMPANY.name} - Home`}
-          className="flex items-center gap-3.5 group"
+          className="flex items-center gap-2 sm:gap-3 group min-w-0"
           onClick={() => {
             setMenuOpen(false);
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="w-[46px] h-[46px] md:w-[52px] md:h-[52px] rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0 shadow-md shadow-[#0046C8]/15 border border-[#0046C8]/20 bg-[#0046C8] group-hover:scale-105 transition-transform duration-200">
-            <img src="/Logo.jpeg?v=2" alt="UKR Automation Logo" width={52} height={52} className="w-full h-full object-contain rounded-xl" />
+          <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-[48px] md:h-[48px] rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm border border-[#0046C8]/20 bg-[#0046C8] group-hover:scale-105 transition-transform duration-200">
+            <img src="/Logo.jpeg?v=2" alt="UKR Automation Logo" width={48} height={48} className="w-full h-full object-contain rounded-lg sm:rounded-xl" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-[#091E42] font-bold text-lg md:text-xl tracking-tight leading-none group-hover:text-[#0046C8] transition-colors">
+          <div className="flex flex-col min-w-0">
+            <span className="text-[#091E42] font-bold text-sm xs:text-base sm:text-lg md:text-xl tracking-tight leading-none group-hover:text-[#0046C8] transition-colors truncate">
               {COMPANY.name}
             </span>
-            <span className="text-[10px] text-[#0046C8] font-bold tracking-widest uppercase mt-1">
+            <span className="text-[8px] xs:text-[9px] sm:text-[10px] text-[#0046C8] font-bold tracking-wider sm:tracking-widest uppercase mt-0.5 sm:mt-1 truncate">
               AI UGC Creative Studio
             </span>
           </div>
@@ -100,16 +100,18 @@ export default function Navbar() {
         </ul>
 
         {/* CTA + hamburger */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
             href={CALENDAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary hidden sm:inline-flex text-sm py-2.5 px-5"
+            className="btn-primary inline-flex text-xs sm:text-sm py-1.5 px-2.5 sm:py-2.5 sm:px-5 shrink-0 rounded-lg sm:rounded-xl items-center"
             aria-label="Get Free Consultation - Book consultation on Google Calendar"
           >
-            Get Free Consultation
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <span className="inline min-[360px]:hidden">Consult</span>
+            <span className="hidden min-[360px]:inline min-[410px]:hidden">Free Consultation</span>
+            <span className="hidden min-[410px]:inline">Get Free Consultation</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 hidden min-[360px]:block">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
@@ -117,15 +119,15 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             id="hamburger-btn"
-            className="lg:hidden flex flex-col gap-1.5 p-2.5 rounded-lg border border-slate-200 hover:border-[#0046C8]/50 hover:bg-slate-50 transition-colors"
+            className="lg:hidden flex flex-col gap-1.5 p-2 sm:p-2.5 rounded-lg border border-slate-200 hover:border-[#0046C8]/50 hover:bg-slate-50 transition-colors shrink-0"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            <span className={`block w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
       </nav>
