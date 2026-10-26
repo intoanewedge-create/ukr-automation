@@ -10,15 +10,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ukrautomation.com"),
-  title: "UKR Automation | AI UGC Video Creation for Businesses",
+  title: "UKR Automation | AI UGC Video Creation & AI Automation Solutions",
   description:
-    "UKR Automation creates AI-powered UGC videos and marketing content for businesses across jewellery, fitness, fashion, beauty, food and more.",
+    "We help businesses create realistic AI UGC videos that promote their products and services, while automating repetitive tasks to save time and respond faster.",
   keywords:
-    "UKR Automation, AI UGC, UGC video creation, AI video agency, short-form video ads, Instagram Reels, TikTok UGC, jewellery UGC, fitness UGC, fashion UGC, beauty UGC, creator video production",
+    "UKR Automation, AI UGC, UGC video creation, AI automation, WhatsApp enquiry automation, lead automation, AI video agency, short-form video ads, Instagram Reels, business workflows",
   openGraph: {
-    title: "UKR Automation | AI UGC Video Creation for Businesses",
+    title: "UKR Automation | AI UGC Video Creation & AI Automation Solutions",
     description:
-      "Create scroll-stopping UGC-style videos for your products, services and brand using AI — without traditional production overhead.",
+      "We help businesses create realistic AI UGC videos that promote their products and services, while automating repetitive tasks to save time and respond faster.",
     type: "website",
     locale: "en_US",
     images: [
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UKR Automation | AI UGC Video Creation for Businesses",
+    title: "UKR Automation | AI UGC Video Creation & AI Automation Solutions",
     description:
-      "Create scroll-stopping UGC-style videos for your products, services and brand using AI — without traditional production overhead.",
+      "We help businesses create realistic AI UGC videos that promote their products and services, while automating repetitive tasks to save time and respond faster.",
     images: ["/Logo.jpeg"],
   },
   icons: {

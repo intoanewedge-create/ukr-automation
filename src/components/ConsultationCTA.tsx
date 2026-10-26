@@ -25,7 +25,7 @@ export default function ConsultationCTA() {
       id="consultation"
       ref={sectionRef}
       className="py-16 sm:py-24 lg:py-36 relative overflow-hidden bg-white border-t border-[#0046c8]/10"
-      aria-label="Free AI UGC consultation"
+      aria-label="Free AI UGC and Automation Consultation"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div

@@ -5,9 +5,10 @@
 
 export const COMPANY = {
   name: "UKR Automation",
-  tagline: "AI UGC & Video Content for Modern Brands",
+  mobileHeaderName: "UKR Automations",
+  tagline: "AI Automation & AI UGC Videos",
   description:
-    "UKR Automation creates AI-powered UGC videos and marketing content for businesses across jewellery, fitness, fashion, beauty, food and more.",
+    "We help businesses reduce repetitive manual work through smart AI automation and create realistic AI UGC videos to promote their products and services.",
   phone: "9652609101",
   phoneHref: "tel:9652609101",
   email: "ujwalkumarrai01@gmail.com",
@@ -16,4 +17,5 @@ export const COMPANY = {
 
 export const CALENDAR_URL =
   "https://calendar.app.google/92gRBDdt6gZcuZx28";
+
 

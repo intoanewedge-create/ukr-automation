@@ -2,14 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { CALENDAR_URL, COMPANY } from "@/lib/constants";
+import Image from "next/image";
+import { CALENDAR_URL } from "@/lib/constants";
 
 const navLinks = [
-  { label: "Services",     href: "#services" },
-  { label: "Why UGC",      href: "#why-ugc" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Channels",     href: "#platforms" },
-  { label: "Contact",      href: "#contact" },
+  { label: "Home", href: "#home" },
+  { label: "AI Automation", href: "#ai-automation" },
+  { label: "AI UGC Videos", href: "#ugc-videos" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Why Us", href: "#why-us" },
+  { label: "Process", href: "#process" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -54,44 +57,53 @@ export default function Navbar() {
       role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm"
-          : "bg-white/80 backdrop-blur-sm border-b border-slate-100"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs"
+          : "bg-white/90 backdrop-blur-sm border-b border-slate-100"
       }`}
     >
       <nav
         aria-label="Main navigation"
-        className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-14 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4"
       >
-        {/* Logo */}
+        {/* Brand Link — prioritized layout: Logo | UKR Automations (full text, single line, no truncation) */}
         <Link
           href="/"
-          aria-label={`${COMPANY.name} - Home`}
-          className="flex items-center gap-2 sm:gap-3 group min-w-0"
+          aria-label="UKR Automations - Home"
+          className="flex items-center gap-1.5 sm:gap-3 group shrink-0 select-none min-w-0"
           onClick={() => {
             setMenuOpen(false);
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-[48px] md:h-[48px] rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm border border-[#0046C8]/20 bg-[#0046C8] group-hover:scale-105 transition-transform duration-200">
-            <img src="/Logo.jpeg?v=2" alt="UKR Automation Logo" width={48} height={48} className="w-full h-full object-contain rounded-lg sm:rounded-xl" />
+          <div className="w-7.5 h-7.5 min-[360px]:w-8 min-[360px]:h-8 sm:w-11 sm:h-11 md:w-[44px] md:h-[44px] rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center shrink-0 shadow-xs border border-[#0046C8]/20 bg-[#0046C8] group-hover:scale-105 transition-transform duration-200">
+            <Image
+              src="/Logo.jpeg"
+              alt="UKR Automation Logo"
+              width={44}
+              height={44}
+              priority
+              className="w-full h-full object-contain rounded-lg sm:rounded-xl"
+            />
           </div>
-          <div className="flex flex-col min-w-0">
-            <span className="text-[#091E42] font-bold text-sm xs:text-base sm:text-lg md:text-xl tracking-tight leading-none group-hover:text-[#0046C8] transition-colors truncate">
-              {COMPANY.name}
+          <div className="flex flex-col shrink-0 justify-center min-w-0">
+            {/* Full brand name UKR Automations without ellipsis or truncation */}
+            <span className="text-[#091E42] font-extrabold text-[12.5px] min-[360px]:text-[13.5px] min-[390px]:text-[14px] sm:text-lg md:text-xl tracking-tight leading-tight group-hover:text-[#0046C8] transition-colors whitespace-nowrap">
+              UKR Automations
             </span>
-            <span className="text-[8px] xs:text-[9px] sm:text-[10px] text-[#0046C8] font-bold tracking-wider sm:tracking-widest uppercase mt-0.5 sm:mt-1 truncate">
-              AI UGC Creative Studio
+            {/* Tagline hidden on mobile (< 640px) to prevent truncating brand name; visible on tablet/desktop */}
+            <span className="hidden sm:block text-[8px] sm:text-[9.5px] text-[#0046C8] font-bold tracking-wider uppercase mt-0.5 whitespace-nowrap">
+              AI Automation &amp; AI UGC Videos
             </span>
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-8" role="list">
+        {/* Desktop nav links */}
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-8" role="list">
           {navLinks.map((link) => (
             <li key={link.label}>
               <button
                 onClick={() => handleNavClick(link.href)}
-                className="text-sm font-semibold text-slate-600 hover:text-[#0046C8] transition-colors duration-150 cursor-pointer bg-transparent border-none tracking-normal"
+                className="text-sm font-semibold text-slate-600 hover:text-[#0046C8] transition-colors duration-150 cursor-pointer bg-transparent border-none tracking-normal py-1"
               >
                 {link.label}
               </button>
@@ -99,47 +111,57 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA + hamburger */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        {/* Right CTA + Mobile Hamburger Menu */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <a
             href={CALENDAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex text-xs sm:text-sm py-1.5 px-2.5 sm:py-2.5 sm:px-5 shrink-0 rounded-lg sm:rounded-xl items-center"
+            className="nav-consultation-btn"
             aria-label="Get Free Consultation - Book consultation on Google Calendar"
           >
-            <span className="inline min-[360px]:hidden">Consult</span>
-            <span className="hidden min-[360px]:inline min-[410px]:hidden">Free Consultation</span>
-            <span className="hidden min-[410px]:inline">Get Free Consultation</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 hidden min-[360px]:block">
+            <span className="nav-label-narrow">Consultation</span>
+            <span className="nav-label-medium">Free Consultation</span>
+            <span className="nav-label-desktop">Get Free Consultation</span>
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="nav-consultation-arrow"
+            >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
 
-          {/* Hamburger */}
+          {/* Hamburger toggle button */}
           <button
             id="hamburger-btn"
-            className="lg:hidden flex flex-col gap-1.5 p-2 sm:p-2.5 rounded-lg border border-slate-200 hover:border-[#0046C8]/50 hover:bg-slate-50 transition-colors shrink-0"
+            className="lg:hidden flex flex-col justify-center items-center w-7.5 h-7.5 min-[360px]:w-8 min-[360px]:h-8 rounded-lg border border-slate-200 hover:border-[#0046C8]/50 hover:bg-slate-50 transition-colors shrink-0 p-1 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-4.5 sm:w-5 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block w-3.5 min-[360px]:w-4 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-1" : ""}`} />
+            <span className={`block w-3.5 min-[360px]:w-4 h-0.5 bg-slate-800 my-0.5 transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-3.5 min-[360px]:w-4 h-0.5 bg-slate-800 transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-1" : ""}`} />
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile navigation dropdown */}
       <div
         id="mobile-menu"
         ref={menuRef}
         role="dialog"
         aria-label="Mobile navigation"
         className={`lg:hidden overflow-hidden transition-all duration-200 ease-in-out ${
-          menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
         } bg-white border-b border-slate-200 shadow-xl`}
       >
         <ul className="flex flex-col px-4 py-4 gap-1.5" role="list">

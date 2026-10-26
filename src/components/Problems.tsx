@@ -69,7 +69,7 @@ export default function Problems() {
             The Creative Bottleneck
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
-            Traditional Video Shoots Don't Scale For Today's Feeds.
+            Traditional Video Shoots Don&apos;t Scale For Today&apos;s Feeds.
           </h2>
           <p className="mt-3 sm:mt-5 text-[#475569] text-sm sm:text-lg leading-relaxed font-normal">
             TikTok, Reels, and Meta Ads demand continuous creative testing and platform-native pacing. Legacy studio production is simply too slow, rigid, and expensive to keep up.

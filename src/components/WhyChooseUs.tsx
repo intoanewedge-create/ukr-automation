@@ -5,27 +5,27 @@ import { useEffect, useRef } from "react";
 const pillars = [
   {
     num: "01",
-    title: "Feels Authentic",
-    desc: "UGC feels natural and relatable, helping brands connect with real people.",
-    tag: "Authentic",
+    title: "Systems & Content in One Agency",
+    desc: "We solve both sides of customer growth: setting up intelligent automations to handle enquiries immediately, and creating scroll-stopping promotional videos to attract attention.",
+    tag: "Complete Approach",
   },
   {
     num: "02",
-    title: "Builds Trust",
-    desc: "People are more likely to trust content that feels like a genuine experience rather than a traditional advertisement.",
-    tag: "Trust",
+    title: "24/7 Enquiry Response",
+    desc: "Automated workflows on WhatsApp and your website ensure incoming prospects receive fast, accurate answers and booking options even outside business hours.",
+    tag: "Save Hours",
   },
   {
     num: "03",
-    title: "Made for Social",
-    desc: "UGC is created in a format that naturally fits platforms like Instagram, YouTube and TikTok.",
-    tag: "Social Native",
+    title: "Realistic Creator-Style Video",
+    desc: "Produce lifelike on-camera presentations, macro product showcases, and multiple hook variations without the friction, delay, or expense of physical video shoots.",
+    tag: "High Engagement",
   },
   {
     num: "04",
-    title: "More Creative Options",
-    desc: "Create different hooks, styles and perspectives so brands have more content to test and use.",
-    tag: "Variations",
+    title: "Practical & Custom-Built",
+    desc: "We focus on straightforward solutions tailored to your specific industry and daily routines, connecting directly with your existing spreadsheets, calendars, and tools.",
+    tag: "Simple Setup",
   },
 ];
 
@@ -47,7 +47,6 @@ export default function WhyChooseUs() {
     const els = sectionRef.current?.querySelectorAll(".reveal");
     els?.forEach((el) => {
       observer.observe(el);
-      // Fallback: if already within viewport
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
         el.classList.add("visible");
@@ -58,54 +57,58 @@ export default function WhyChooseUs() {
 
   return (
     <section
-      id="why-ugc"
+      id="why-us"
       ref={sectionRef}
-      className="py-16 sm:py-20 lg:py-28 relative overflow-hidden bg-[#F0F6FE] border-t border-[#0046c8]/10"
-      aria-label="Why Brands Choose UGC"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-white border-t border-slate-100"
+      aria-label="Why Choose UKR Automation"
     >
-      <div id="why-us" className="sr-only">Why Choose UKR Automation</div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-8 sm:mb-12 reveal">
-          <div className="section-badge">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0046c8]" />
-            The UGC Advantage
+        <div className="max-w-3xl mb-12 sm:mb-16 reveal">
+          <div className="section-badge bg-[#F0F7FF] border border-[#0046C8]/20">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0046C8]" />
+            Why UKR Automation
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#091E42] tracking-tight leading-tight">
-            Why UGC?
+            Practical Benefits for Modern Businesses.
           </h2>
-          <p className="mt-3 sm:mt-4 text-[#42526E] text-sm sm:text-lg leading-relaxed">
-            Content that connects with modern audiences.
+          <p className="mt-3 sm:mt-5 text-[#475569] text-base sm:text-lg leading-relaxed">
+            We focus on real business utility: making your products look exceptional on social feeds while automating routine communication to save your team valuable hours.
           </p>
         </div>
 
         {/* Pillars Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {pillars.map((pillar, idx) => (
             <div
               key={pillar.title}
-              className="p-5 sm:p-6 rounded-2xl bg-white border border-[#0046c8]/10 shadow-[0_4px_20px_rgba(0,70,200,0.04)] hover:border-[#0046c8]/40 hover:shadow-[0_12px_30px_rgba(0,70,200,0.08)] transition-all duration-300 reveal flex flex-col justify-between group"
+              className="p-6 sm:p-7 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 hover:border-[#0046C8]/40 hover:bg-white hover:shadow-xl hover:shadow-[#0046C8]/6 transition-all duration-300 reveal flex flex-col justify-between group"
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#0046c8] bg-[#EBF3FE] px-2.5 py-1 rounded-md">
+                  <span className="font-mono text-xs font-bold text-[#0046C8] bg-[#E8F2FE] px-2.5 py-1 rounded-md">
                     {pillar.num}
                   </span>
-                  <span className="text-[11px] font-mono text-[#5E6C84] px-2 py-0.5 rounded bg-[#F4F5F7]">
+                  <span className="text-[11px] font-mono text-slate-500 px-2.5 py-0.5 rounded bg-white border border-slate-200/60 font-medium">
                     {pillar.tag}
                   </span>
                 </div>
 
-                <h3 className="text-[#091E42] font-bold text-lg mb-2 group-hover:text-[#0046c8] transition-colors">
+                <h3 className="text-[#091E42] font-bold text-lg mb-2.5 group-hover:text-[#0046C8] transition-colors leading-snug">
                   {pillar.title}
                 </h3>
 
-                <p className="text-[#5E6C84] text-sm leading-relaxed">
+                <p className="text-[#475569] text-xs sm:text-sm leading-relaxed">
                   {pillar.desc}
                 </p>
+              </div>
+
+              <div className="mt-6 pt-3 border-t border-slate-200/50">
+                <span className="text-[11px] font-mono text-[#0046C8] font-semibold">
+                  Practical Advantage
+                </span>
               </div>
             </div>
           ))}
